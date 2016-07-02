@@ -1,0 +1,26 @@
+apply plugin: 'java'
+apply plugin: 'application'
+
+group 'GoogleSheetsWithVertx'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'io.vertx', name: 'vertx-core', version: '3.3.0'
+    compile group: 'io.vertx', name: 'vertx-web', version: '3.3.0'
+
+    compile 'com.google.api-client:google-api-client:1.22.0'
+    compile 'com.google.apis:google-api-services-sheets:v4-rev9-1.22.0'
+
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    testCompile group: 'io.vertx', name: 'vertx-unit', version: '3.3.0'
+}
+
+run {
+    mainClassName = "runner.Runner"
+}
